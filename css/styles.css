@@ -14,13 +14,42 @@ ul {
     list-style: none;
 }
 
-.btn {
+body {
     font-family: 'Rubik', sans-serif;
+}
+
+.btn {
     outline: none;
     border: none;
     padding: 0; 
     background: none;
-    transition-duration: 0.4s;
+    cursor: pointer;
+    position: relative;
+    text-decoration: none;
+    color: #4f5665;
+    transition: color .2s linear;
+}
+
+.btn:hover {
+    opacity: 0.8;
+    color: #796e6e;
+}
+
+.btn:after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 3px;
+    display: none;
+    background-color: red;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1;
+}
+
+.nav_link:hover {
+    color: #fce38a;
 }
 
 /*--------------Header---------------------*/
@@ -38,18 +67,19 @@ ul {
     position: relative;
 }
 
+img {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+}
+
 .header_inner {
     display: flex;
     align-items: center;
     max-width: 1140px;
     width: 100%;
     margin: 0 auto;
-    padding-top: 46 px;
-    height: 91px;
-}
-
-.logo {
-    margin: 157px;
+    padding-top: 46px;
 }
 
 .header_nav {
@@ -117,7 +147,7 @@ ul {
     line-height: 70px;
     width: 678px;
     color: #0B132A;
-    margin: 116px 0 21 px;
+    margin: 116px 0 21px;
 }
 
 .welcome_subtitle {
@@ -137,30 +167,26 @@ ul {
     width: 250px;
     height: 60px;
     border-radius: 10px;
-    background-color: #F53838;
-
+    background-color: #F53838;    
 }
 
 .welcome_img {
     position: absolute;
     right: 0;
     bottom: 0;
-    width: 611px;
-    height: 382px;
 }
+
 /*--------------Info---------------------*/
 .info{
     width: 100%;
     margin-top: 78px;
-
 }
 
-.info_container{
+.container{
     display: flex;
     align-items: center;
     max-width: 1140px;
     width: 100%;
-    height: 200px;
     border-radius: 10px;
     margin: 0 auto;
 }
@@ -192,7 +218,6 @@ ul {
 }
 
 /*--------------Main---------------------*/
-
 .main {
     width: 100%;
     padding-bottom: 101px;
@@ -207,7 +232,6 @@ ul {
 }
 
 .main_title {
-    width: 548px;
     font-weight: 500;
     font-size: 35px;
     line-height: 50px;
@@ -215,7 +239,6 @@ ul {
 }
 
 .main_second {
-    width: 471px;
     font-weight: 400;
     font-size: 16px;
     line-height: 30px;
@@ -245,5 +268,144 @@ ul {
     width: 20px;
     height: 20px;
     background: url(../img/icon.svg) center no-repeat;
+}
+
+.main > .container {
+    justify-content: space-between;
+}
+.main__img,
+.main_first {
+    flex: 1 1 50%;
+}
+.main_first {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    justify-content: flex-end;
+}
+
+/*--------------Plan---------------------*/
+.plan {
+    width: 100%;
+    padding-top: 80px;
+}
+
+.plan_title {
+    text-align: center;
+    margin: 0;
+    font-weight: 500;
+    font-size: 35px;
+    line-height: 50px;
+    color: #0B132A;
+}
+
+.plan_subtitle {
+    text-align: center;
+    margin: 20px auto 60px;
+    width: 555px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 30px;
+    color: #4f5665;
+}
+
+.plan_container {
+    display: flex;
+    max-width: min-content;
+    width: 100%;
+    margin: 0 auto
+}
+.plan_card {
+    display: flex;
+    flex-direction: column;
+    width: 330px;
+    height: 760px;
+    border-radius: 10px;
+    border: solid 2px #DDDDDD;
+    text-align: center;
+    transition: .3s;  
+ }
+
+ .plan_card:not(:first-child) {
+    margin-left: 50px;
+ }
+ 
+ .plan_card:hover {
+    border: 2px solid #F53838;    
+  }
+
+.plan_card-img {
+    display: block;
+    margin: 80px auto 30px;
+    width: 145px;
+    height: 165px;
+}  
+
+.plan_card-title {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 30px;
+    color: #0B132A;
+}
+
+.plan_card-list {
+    display: flex;
+    flex-direction: column;
+    margin: 30px auto auto;
+    max-width: min-content;
+    width: 100%;
+    padding-left: 32px;
+    text-align: initial;    
+}
+
+.plan_list-item {
+    min-width: 206px;
+    display: block;
+    position:relative;
+    color: #4f5665;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 30px;
+}
+
+.plan_list-item::before {
+    content: '';
+    display: block;
+    width: 24px;
+    height: 24px;
+    background: url(../img/check_icon.svg) center / cover no-repeat;
+    position: absolute;
+    top: 50%;
+    left: -32px;
+    transform: translateY(-50%);
+}
+
+.plan_card-price {
+    margin-bottom: 20px;
+    font-weight: 500;
+    font-size: 25px;
+    line-height: 30px;
+    color: #0B132A;
+}
+
+.plan_card-btn {
+    width: 178px;
+    height: 45px;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 19px;
+    color: #F53838;
+    border-radius: 50px;
+    border: solid 2px #F53838;
+    transition: .3s;
+    margin: 0 auto 64px;
+}
+
+.plan_card-btn:hover {
+    background-color: #F53838;
+    color: #fff;
+    transition: .3s;
 }
 
